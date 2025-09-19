@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # An MCP-based Chatbot | 一个基于 MCP 的聊天机器人
 
 （中文 | [English](README_en.md) | [日本語](README_ja.md)）
@@ -159,3 +160,6 @@
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=78/xiaozhi-esp32&type=Date" />
  </picture>
 </a>
+=======
+# XIAOZHI-2.0-YCSC
+>>>>>>> 16132d7d57f1d0190993e80a1c21968c7adbc0f0
