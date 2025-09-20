@@ -130,8 +130,22 @@ private:
 #ifdef  LCD_TYPE_GC9A01_SERIAL
         panel_config.vendor_config = &gc9107_vendor_config;
 #endif
+<<<<<<< HEAD
     display_ = new SpiLcdDisplay(panel_io, panel,
         DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_OFFSET_X, DISPLAY_OFFSET_Y, DISPLAY_MIRROR_X, DISPLAY_MIRROR_Y, DISPLAY_SWAP_XY);
+=======
+        display_ = new SpiLcdDisplay(panel_io, panel,
+                                    DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_OFFSET_X, DISPLAY_OFFSET_Y, DISPLAY_MIRROR_X, DISPLAY_MIRROR_Y, DISPLAY_SWAP_XY,
+                                    {
+                                        .text_font = &font_puhui_16_4,
+                                        .icon_font = &font_awesome_16_4,
+#if CONFIG_USE_WECHAT_MESSAGE_STYLE
+                                        .emoji_font = font_emoji_32_init(),
+#else
+                                        .emoji_font = DISPLAY_HEIGHT >= 240 ? font_emoji_64_init() : font_emoji_32_init(),
+#endif
+                                    });
+>>>>>>> 3e3dfe3c5dba1290c99bf7ef31a3dbbc500555eb
     }
 
     void InitializeCamera() {
@@ -207,6 +221,7 @@ public:
 
         InitializeHiController();
 
+<<<<<<< HEAD
         // 配置GPIO_NUM_21为高电平
         gpio_config_t io_conf = {};
         io_conf.mode = GPIO_MODE_OUTPUT;
@@ -216,6 +231,8 @@ public:
         gpio_config(&io_conf);
         gpio_set_level(GPIO_NUM_21, 1);  // 设置为高电平
 
+=======
+>>>>>>> 3e3dfe3c5dba1290c99bf7ef31a3dbbc500555eb
         ESP_LOGE(TAG, "6666666666666 ycsc-esp-s3cam-hi");
         
     }
